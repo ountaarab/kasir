@@ -173,8 +173,8 @@ function add() {
 function kembalian() {
     let total = $("#total").html(),
         jumlah_uang = $('[name="jumlah_uang"').val(),
-        diskon = $('[name="diskon"]').val();
-    $(".kembalian").html(jumlah_uang - total - diskon);
+        diskon = $('[name="diskon"]').val();;
+    $(".kembalian").html(parseInt(jumlah_uang) - parseInt(total) + parseInt(diskon));
     checkUang()
 }
 $("#barcode").select2({

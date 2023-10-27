@@ -62,6 +62,20 @@
 						<?php echo $bayar ?>
 					</td>
 				</tr>
+				<?php 
+					if($diskon > 0):
+				?>
+				<tr>
+					<td width="76%" align="right">
+						Diskon
+					</td>
+					<td width="23%" align="right">
+						<?php echo $diskon ?>
+					</td>
+				</tr>
+				<?php 
+					endif;
+				?>
 				<tr>
 					<td width="76%" align="right">
 						Kembalian

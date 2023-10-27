@@ -94,13 +94,16 @@ class Transaksi extends CI_Controller {
 			$value->harga = $value->harga * $qty[$key];
 		}
 
+		$kembalian = $produk->jumlah_uang - $produk->total_bayar + (($produk->diskon > 0) ? $produk->diskon : 0);
+
 		$data = array(
 			'nota' => $produk->nota,
 			'tanggal' => $produk->tanggal,
 			'produk' => $dataProduk,
 			'total' => $produk->total_bayar,
+			'diskon' => $produk->diskon,
 			'bayar' => $produk->jumlah_uang,
-			'kembalian' => $produk->jumlah_uang - $produk->total_bayar,
+			'kembalian' => $kembalian,
 			'kasir' => $produk->kasir
 		);
 		$this->load->view('cetak', $data);
