@@ -72,7 +72,7 @@ class Transaksi_model extends CI_Model {
 
 	public function transaksiTerakhir($hari)
 	{
-		return $this->db->query("SELECT transaksi.qty FROM transaksi WHERE DATE_FORMAT(tanggal, '%d %m %Y') = '$hari' LIMIT 1")->row();
+		return $this->db->query("SELECT transaksi.qty FROM transaksi WHERE DATE_FORMAT(tanggal, '%d %m %Y') = '$hari' ORDER BY id DESC LIMIT 1")->row();
 	}
 
 	public function getAll($id)
